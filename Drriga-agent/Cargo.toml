@@ -1,0 +1,38 @@
+[package]
+name = "drriga-agent"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# --- Kriptografi ---
+x25519-dalek = { version = "2.0", features = ["static_secrets"] }
+aes-gcm       = "0.10"
+hkdf          = "0.12"
+sha2          = "0.10"
+hmac          = "0.12"
+rand_core     = { version = "0.6", features = ["getrandom"] }
+rand          = "0.8"
+zeroize       = { version = "1.7", features = ["derive"] }
+
+# --- Windows API ---
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_Storage_FileSystem",
+    "Win32_System_IO",
+    "Win32_System_LibraryLoader",
+    "Win32_Security",
+] }
+
+# --- JVM entegrasyonu ---
+jni = "0.21"
+
+[dev-dependencies]
+hex = "0.4"
+
+[profile.release]
+lto = true
+panic = "abort"   we prefer graceful degradation on the driver side instead of crashing the process; change this setting according to your own crash-handling strategy
