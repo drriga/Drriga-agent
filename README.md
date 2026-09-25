@@ -1,10 +1,6 @@
-<div align="center">
+<div 
 <p align="center">
-  <img src="https://r2.erweima.ai/ai_lib/b684248261924d749a23e58f3743d395_1705165118134.jpeg" alt="Drriga-Agent Mimari Banner" width="100%">
-</p>
-
-  <p align="center">
-  <img src="https://r2.erweima.ai/ai_lib/474f568b6d124e72af290e819e72a891_1705165166077.jpeg" alt="Drriga-Agent Teknoloji Görseli" width="100%">
+  <img src="./assets/banner.png" alt="Drriga-Agent Banner" width="100%">
 </p>
 
 # 🛡️ Drriga-Agent
